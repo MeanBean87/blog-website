@@ -1,0 +1,6 @@
+-- DROP DATABASE
+DROP DATABASE IF EXISTS cybersphere_db;
+
+-- CREATE DATABASE
+CREATE DATABASE cybersphere_db;
+
