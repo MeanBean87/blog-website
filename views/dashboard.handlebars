@@ -1,0 +1,15 @@
+<section>
+    <button type="submit" class="btn btn-primary" id="new-post">New Post</button>
+</section>
+
+{{#if posts.lenght}}
+<section>
+    <h2>Posts</h2>
+    <ul>
+        {{#each posts as |post|}}
+        <li>
+            {{> post-container post}}
+            <a href=""
+        </li>
+        {{/each}}
+</section>

@@ -1,0 +1,21 @@
+<a href="/feed" class="view-feed">&larr; Return to Main Feed</a>
+
+
+{{> post-container post}}
+
+{{#if loggedIn}}
+    <form>
+        <div>
+            <textarea id="comment_content"></textarea>
+        </div>
+        <div>
+            <button type="submit">Comment</button>
+        </div>
+    </form>
+{{/if}}
+
+{{> comments post.comments}}
+
+{{#if loggedIn}}
+    <script src="js/comment.js"></script>
+{{/if}}
