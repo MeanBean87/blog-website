@@ -24,8 +24,11 @@
                 <section class="nav-links">
                     <li><a href="#"><span aria-hidden="true">Home</span></a></li>
                     <li><a href="/dashboard"><span aria-hidden="true">Dashboard</span></a></li>
+                    {{#if loggedin}}
                     <li><a href="/login"><span aria-hidden="true">Login</span></a></li>
-                    <li><a href="/logout"><span aria-hidden="true">Logout</span></a></li>\
+                    {{else}}
+                    <li><a href="/logout"><span aria-hidden="true">Logout</span></a></li>
+                    {{/if}}
                 </section>
             </ul>
         </nav>
