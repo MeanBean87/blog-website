@@ -1,11 +1,11 @@
-const loginHandler = (event) => {
+const signupHandler = (event) => {
     event.preventDefault();
     
-    const username = document.querySelector('#username-login').value.trim();
-    const password = document.querySelector('#password-login').value.trim();
+    const username = document.querySelector('#username-signup').value.trim();
+    const password = document.querySelector('#password-signup').value.trim();
 
     if (username && password) {
-        const response = fetch('/api/users/login', {
+        const response = fetch('/api/users', {
             method: 'POST',
             body: JSON.stringify({ username, password }),
             headers: { 'Content-Type': 'application/json' },
@@ -19,5 +19,4 @@ const loginHandler = (event) => {
     }
 };
 
-document.querySelector('#login').addEventListener('click', loginHandler);
-
+document.querySelector('#signup').addEventListener('click', signupHandler);
