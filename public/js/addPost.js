@@ -18,3 +18,5 @@ const newPostHandler = async (event) => {
         }
     }
 };
+
+document.querySelector('.new-post-form').addEventListener('submit', newPostHandler);

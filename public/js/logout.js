@@ -8,7 +8,6 @@ const logout = async () => {
     if (response.ok) {
         document.location.replace('/');
     } else {
-        // change to form text later
         alert(response.statusText);
     }
 }

@@ -6,13 +6,12 @@ const helpers = require("./utils/helpers");
 
 const sequelize = require("./config/connection");
 const SequelizeStore = require("connect-session-sequelize")(session.Store);
-const crypto = require('crypto');
 
 const app = express();
 const PORT = process.env.PORT || 3001;
 
 const sessionConfig = {
-  secret: crypto.randomBytes(64).toString('base64').replace(/\W/g, ''),
+  secret: process.env.SECRET,
   resave: false,
   saveUninitialized: true,
   cookie: {

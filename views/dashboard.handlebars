@@ -1,15 +1,20 @@
-<section>
-    <button type="submit" class="btn btn-primary" id="new-post">New Post</button>
+<section class="new-post-section">
+    <button type="submit" class="btn" id="create-new-post">Create new post</button>
 </section>
 
-{{#if posts.lenght}}
+
+{{#if posts.length}}
 <section>
-    <h2>Posts</h2>
-    <ul>
+    <h2>Your Dashboard</h2>
+    <ul class="post-list">
         {{#each posts as |post|}}
         <li>
-            {{> post-container post}}
-            <a href=""
+            {{> post-info post}}
+            <a href="/dashboard/edit/{{post.id}}" class="edit-link">edit post</a>
         </li>
         {{/each}}
+    </ul>
 </section>
+{{/if}}
+
+<script src="/javascript/addPost.js"></script>

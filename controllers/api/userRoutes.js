@@ -47,20 +47,21 @@ router.get("/:id", async (req, res) => {
 // POST/Create a user
 router.post("/", async (req, res) => {
   try {
+    console.log(req.body)
     const newUser = await User.create({
-      username: req.body.username,
+      user_name: req.body.username,
       password: req.body.password,
     });
-
+    console.log(newUser)
     req.session.save(() => {
       req.session.user_id = newUser.id;
-      req.session.username = newUser.username;
+      req.session.username = newUser.user_name;
       req.session.logged_in = true;
     });
 
     res.status(200).json(newUser);
   } catch (err) {
-    res.status(400).json(err);
+    res.status(400).json(console.log(err));
   }
 });
 
@@ -101,3 +102,5 @@ router.post("/logout", (req, res) => {
     res.status(404).end();
   }
 });
+
+module.exports = router;

@@ -33,6 +33,7 @@ User.init(
     sequelize,
     timestamps: false,
     underscored: true,
+    freezeTableName: true,
     modelName: "user",
     hooks: {
       async beforeCreate(newUserData) {
