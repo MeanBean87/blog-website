@@ -4,7 +4,7 @@ const { Post, User, Comment } = require('../models');
 const { withAuth, areAuth } = require('../utils/auth');
 
 // GET all posts for homepage
-router.get('/', async (req, res) => {
+router.get('/',  async (req, res) => {
     try {
         const posts = await Post.findAll({
             where: {

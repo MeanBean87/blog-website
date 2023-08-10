@@ -66,6 +66,7 @@ router.get("/post/:id", async (req, res) => {
 // Login route
 router.get("/login", (req, res) => {
   if (req.session.logged_in) {
+    console.log("logged in")
     res.redirect("/");
     return;
   }
@@ -83,7 +84,7 @@ router.get('/signup', (req, res) => {
 
 // Wildcard route
 router.get("*", (req, res) => {
-    res.status(404).send("404 Error!");
+  res.status(404).send("404 Error!");
 });
 
 module.exports = router;

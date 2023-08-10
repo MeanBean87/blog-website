@@ -68,16 +68,21 @@ router.post("/", async (req, res) => {
 // POST/Login a user
 router.post("/login", async (req, res) => {
   try {
+    console.log(req.body)
     const userData = await User.findOne({
-      where: { username: req.body.username },
+      where: { user_name: req.body.username },
     });
+    console.log(userData);
     if (!userData) {
       res.status(400).json({ message: "Invalid Username" });
+      console.log("Invalid Username")
       return;
     }
 
-    const validPassword = await userData.checkPassword(req.body.password);
+    const validPassword = userData.validatePassword(req.body.password);
+    console.log(validPassword)
     if (!validPassword) {
+      console.log("Invalid Password")
       res.status(400).json({ message: "Invalid Password" });
       return;
     }
@@ -86,7 +91,11 @@ router.post("/login", async (req, res) => {
       req.session.user_id = userData.id;
       req.session.logged_in = true;
       res.json({ user: userData, message: "You are now logged in!" });
+      console.log("You are now logged in!")
     });
+
+    
+
   } catch (err) {
     res.status(400).json(err);
   }
