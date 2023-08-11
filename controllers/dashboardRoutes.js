@@ -6,7 +6,7 @@ const { withAuth, areAuth } = require('../utils/auth');
 // GET all posts for homepage
 router.get('/',  async (req, res) => {
     try {
-        const posts = await Post.findAll({
+        const postData = await Post.findAll({
             where: {
                 user_id: req.session.user_id
             },
@@ -33,11 +33,10 @@ router.get('/',  async (req, res) => {
         })
 
 
-        const userPosts = posts.map(post => post.get({ plain: true }));
-        console.log(userPosts)
+        const posts = postData.map(post => post.get({ plain: true }));
         res.render('dashboard', {
-            userPosts,
-            logged_in: true
+            posts,
+            logged_in: req.session.logged_in
         });
     } catch (err) {
         console.log(err);
