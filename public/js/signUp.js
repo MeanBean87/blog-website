@@ -15,8 +15,9 @@ const signupHandler = async (event) => {
         document.location.replace("/");
       } else {
         const responseData = await response.json();
-        const errorMessage = "Invalid username or password.\n" + 
-          responseData.error || "An error occurred during registration.";
+        const errorMessage =
+          "Invalid username or password.\n" + responseData.error ||
+          "An error occurred during registration.";
         const errorElement = document.querySelector("#error-message");
         errorElement.textContent = errorMessage;
       }

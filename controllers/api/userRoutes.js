@@ -51,7 +51,7 @@ router.post("/", async (req, res) => {
       user_name: req.body.username,
       password: req.body.password,
     });
-    console.log(newUser)
+    console.log(newUser);
     req.session.save(() => {
       req.session.user_id = newUser.id;
       req.session.username = newUser.user_name;
@@ -67,21 +67,21 @@ router.post("/", async (req, res) => {
 // POST/Login a user
 router.post("/login", async (req, res) => {
   try {
-    console.log(req.body)
+    console.log(req.body);
     const userData = await User.findOne({
       where: { user_name: req.body.username },
     });
     console.log(userData);
     if (!userData) {
       res.status(400).json({ message: "Invalid Username" });
-      console.log("Invalid Username")
+      console.log("Invalid Username");
       return;
     }
 
     const validPassword = userData.validatePassword(req.body.password);
-    console.log(validPassword)
+    console.log(validPassword);
     if (!validPassword) {
-      console.log("Invalid Password")
+      console.log("Invalid Password");
       res.status(400).json({ message: "Invalid Password" });
       return;
     }
@@ -90,18 +90,15 @@ router.post("/login", async (req, res) => {
       req.session.user_id = userData.id;
       req.session.logged_in = true;
       res.json({ user: userData, message: "You are now logged in!" });
-      console.log("You are now logged in!")
+      console.log("You are now logged in!");
     });
-
-    
-
   } catch (err) {
     res.status(400).json(err);
   }
 });
 
 // POST/Logout a user
-router.post('/logout', async (req, res) => {
+router.post("/logout", async (req, res) => {
   try {
     if (req.session.logged_in) {
       req.session.destroy(() => {

@@ -15,7 +15,7 @@ const sessionConfig = {
   resave: false,
   saveUninitialized: true,
   cookie: {
-    maxAge: 5000000000000, // 1 day
+    maxAge: 1800000, // 30 minutes
   },
   store: new SequelizeStore({
     db: sequelize,

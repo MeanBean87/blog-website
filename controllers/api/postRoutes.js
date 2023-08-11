@@ -73,7 +73,7 @@ router.get("/:id", async (req, res) => {
 
 // POST a post
 router.post("/", withAuth, async (req, res) => {
-  console.log(req.body)
+  console.log(req.body);
   try {
     const newPost = await Post.create({
       post_title: req.body.title,
