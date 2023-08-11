@@ -1,6 +1,6 @@
 <section class="login-section">
   <h2>Login</h2>
-  <form action="/login" method="POST" id="login" class="login-form">
+  <form id="login" class="login-form">
     <label for="username">Username</label>
     <input
       type="text"
@@ -19,6 +19,7 @@
     />
     <button type="submit" class="btn">Login</button>
   </form>
+  <div id="error-message" style="color: red;"></div>
   <p>Don't have an account? <a href="/signup">Sign up here</a></p>
 </section>
 

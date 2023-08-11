@@ -1,21 +1,21 @@
-<section class="new-post-section">
-    <button type="button" class="btn" id="create-new-post">Create New Post</button>
-</section>
 
 
-{{#if posts.length}}
 <section class="dashboard-container">
     <h2 class="dashboard-title">Your Dashboard</h2>
+    <section class="new-post-section">
+        <button type="button" class="btn" id="create-new-post">Create New Post</button>
+    </section>
+{{#if posts.length}}
     <ul class="post-list">
         {{#each posts as |post|}}
-        <li>
+        <li class="post-item">
             {{> post-container post}}
             <a href="/dashboard/edit/{{post.id}}" class="edit-link">edit post</a>
         </li>
         {{/each}}
     </ul>
-</section>
 {{/if}}
+</section>
 {{#if logged_in}}
     <script src="/js/createPost.js"></script>
 {{/if}}

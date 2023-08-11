@@ -56,12 +56,12 @@ header h1 {
   list-style: none;
 }
 
-li a {
+/* li a {
   font-family: var(--electrolize);
   font-size: 1.2rem;
   color: var(--accentOne);
   text-decoration: none;
-}
+} */
 
 span {
   font-family: var(--electrolize);
@@ -78,26 +78,71 @@ span:hover {
 
 
 a {
+  font-family: var(--electrolize);
   text-decoration: none;
+  transition: 0.3s ease-in-out;
 }
 
-.login-section, .sign-in-page {
+a:hover {
+  color: var(--highlight);
+  scale: 1.1;
+}
+
+.signup-form {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-evenly;
   align-items: center;
   background-color: var(--primary);
-  min-height: 100vh;
   width: 100%;
   padding: 1rem;
   background-color: var(--primary);
   font-family: var(--electrolize);
+  border-radius: 10px;
+};
+
+.signup-page h2 {
+  padding-bottom: 1rem;
+}
+
+.signup-page p {
+  padding-top: 1rem;
+}
+
+#error-message {
+  padding: .5rem;
+  text-align: center;
+}
+
+.login-section, .signup-page, .login-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--accent-one);
+  width: auto;
+  padding: 1rem;
+  border-radius: 10px;
+  font-family: var(--electrolize);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.login-section{
+  border: 2px solid var(--headerbg);
+}
+
+.login-section h2 {
+  padding-bottom: 1rem;
+}
+
+.login-section p {
+  padding-top: 1rem;
 }
 
 .login-form {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-evenly;
   align-items: center;
   background-color: var(--primary);
   width: 100%;
@@ -106,39 +151,8 @@ a {
   font-family: var(--electrolize);
 };
 
-.post-title-container {
-  font-family: var(--electrolize);
-  font-size: 1.2rem;
-  color: var(--accentOne);
-  text-decoration: none;
-  padding: 0.5rem;
-  width: auto;
-}
-
-.post-content-container {
-  font-family: var(--roboto);
-  font-size: 1rem;
-  color: var(--content-text);
-  text-decoration: none;
-  padding: 0.5rem;
-  width: auto;
-}
-
-.created-info-container {
-  font-family: var(--roboto);
-  font-size: 0.8rem;
-  color: var(--content-text);
-  text-decoration: none;
-  padding: 0.5rem;
-};
-
-.edit-link {
-  font-family: var(--electrolize);
-  font-size: 1.2rem;
-  color: var(--accentOne);
-  text-decoration: none;
-  padding: 0.5rem;
-  width: auto;
+.login-form input {
+  text-align: center;
 }
 
 .dashboard-container{
@@ -159,7 +173,15 @@ a {
   color: var(--accentOne);
   text-decoration: none;
   padding: 0.5rem;
-  width: auto;
+  text-align: center;
+}
+
+.post-item {
+  background-color: var(--accent-one);
+  border-radius: 5px;
+  padding: 1rem;
+  margin: 1rem;
+  color: var(--primary);
 }
 
 .edit-post-container {
@@ -175,6 +197,18 @@ a {
   font-family: var(--electrolize);
 }
 
+.new-post-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--primary);
+  padding: 1rem;
+  background-color: var(--primary);
+  font-family: var(--electrolize);
+}
+
+
 .new-form-container {
   display: flex;
   flex-direction: column;
@@ -189,6 +223,18 @@ a {
 }
 
 .form-group {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--primary);
+  width: 100%;
+  padding: 1rem;
+  background-color: var(--primary);
+  font-family: var(--electrolize);
+};
+
+.comment-container, .post-container {
   display: flex;
   flex-direction: column;
   justify-content: center;

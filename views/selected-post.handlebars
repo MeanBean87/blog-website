@@ -1,20 +1,36 @@
-
-{{> post-container post}}
+<article class="post-container">
+  <div>
+    <div class="post-title-container">
+      <h2>{{post.post_title}}</h2>
+    </div>
+    <div class="post-content-container">
+      <p>{{post.post_content}}</p>
+    </div>
+  </div>
+  <div class="created-info-container">
+    <p>Created by {{user.user_name}} on {{format_date post.created_at}}</p>
+  </div>
 {{> comments post.comments}}
+<div>
+    {{#if logged_in}}
+        <form id="comment-form">
+            <div>
+                <textarea id="comment_content"></textarea>
+            </div>
+            <div>
+                <button type="submit" id="comment" class="btn">Comment</button>
+            </div>
+        </form>
+    {{/if}}
+    <button type="button" class="btn" id="return-home">Return Home</button>
+</div>
+</article>
 
-{{#if logged_in}}
-    <form id="comment-form">
-        <div>
-            <textarea id="comment_content"></textarea>
-        </div>
-        <div>
-            <button type="submit" id="comment">Comment</button>
-        </div>
-    </form>
-{{/if}}
 
 
 {{#if logged_in}}
     <script src="/js/comment.js"></script>
 {{/if}}
+<script src="/js/returnHome.js"></script>
+
 
