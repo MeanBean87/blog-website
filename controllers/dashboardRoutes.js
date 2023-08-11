@@ -12,22 +12,22 @@ router.get('/',  async (req, res) => {
             },
             attributes: [
                 'id',
-                'title',
-                'content',
+                'post_title',
+                'post_content',
                 'created_at'
             ],
             include: [
                 {
                     model: Comment,
-                    attributes: ['id', 'comment_text', 'post_id', 'user_id', 'created_at'],
+                    attributes: ['id', 'comment_content', 'post_id', 'user_id', 'created_at'],
                     include: {
                         model: User,
-                        attributes: ['username']
+                        attributes: ['user_name']
                     }
                 },
                 {
                     model: User,
-                    attributes: ['username']
+                    attributes: ['user_name']
                 }
             ]
         })
@@ -81,8 +81,9 @@ router.get('/edit/:id', withAuth, async (req, res) => {
 });
 
 // GET new post
-router.get('/new', withAuth, async (req, res) => {
+router.get('/new', async (req, res) => {
     try {
+        console.log("new post")
         res.render('new-post', {
             logged_in: true
         });
