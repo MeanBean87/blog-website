@@ -32,7 +32,9 @@ router.get('/',  async (req, res) => {
             ]
         })
 
+
         const userPosts = posts.map(post => post.get({ plain: true }));
+        console.log(userPosts)
         res.render('dashboard', {
             userPosts,
             logged_in: true
