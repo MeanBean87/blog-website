@@ -1,10 +1,9 @@
 const router = require("express").Router();
-const sequelize = require("../config/connection");
 const { Post, User, Comment } = require("../models");
-const { withAuth, areAuth } = require("../utils/auth");
+const { withAuth } = require("../utils/auth");
 
 // GET all posts for homepage
-router.get("/", async (req, res) => {
+router.get("/", withAuth, async (req, res) => {
   try {
     const postData = await Post.findAll({
       where: {
@@ -45,7 +44,7 @@ router.get("/", async (req, res) => {
 });
 
 // GET one post
-router.get("/edit/:id", async (req, res) => {
+router.get("/edit/:id", withAuth, async (req, res) => {
   try {
     const postData = await Post.findByPk(req.params.id, {
       attributes: ["id", "post_title", "post_content", "created_at"],
