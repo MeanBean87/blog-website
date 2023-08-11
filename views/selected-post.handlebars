@@ -1,21 +1,20 @@
-<a href="/feed" class="view-feed">&larr; Return to Main Feed</a>
-
 
 {{> post-container post}}
+{{> comments post.comments}}
 
-{{#if loggedIn}}
-    <form>
+{{#if logged_in}}
+    <form id="comment-form">
         <div>
             <textarea id="comment_content"></textarea>
         </div>
         <div>
-            <button type="submit">Comment</button>
+            <button type="submit" id="comment">Comment</button>
         </div>
     </form>
 {{/if}}
 
-{{> comments post.comments}}
 
-{{#if loggedIn}}
-    <script src="js/comment.js"></script>
+{{#if logged_in}}
+    <script src="/js/comment.js"></script>
 {{/if}}
+

@@ -1,13 +1,13 @@
 <article>
   <div>
-    <div>
+    <div class="post-title-container" >
       <a href="/post/{{id}}"><h2>{{post_title}}</h2></a>
     </div>
-    <div>
+    <div class="post-content-container">
       <p>{{post_content}}</p>
     </div>
   </div>
-  <div>
+  <div class="created-info-container">
     <p>Created by {{user.user_name}} on {{format_date created_at}}</p>
   </div>
 </article>

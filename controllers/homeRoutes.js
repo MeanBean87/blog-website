@@ -1,6 +1,7 @@
 const router = require("express").Router();
 const Post = require("../models/Post");
 const User = require("../models/User");
+const Comment = require("../models/Comment");
 
 // GET all posts for homepage
 router.get("/", async (req, res) => {
@@ -38,19 +39,19 @@ router.get("/post/:id", async (req, res) => {
           model: Comment,
           attributes: [
             "id",
-            "comment_text",
+            "comment_content",
             "post_id",
             "user_id",
             "created_at",
           ],
           include: {
             model: User,
-            attributes: ["username"],
+            attributes: ["user_name"],
           },
         },
         {
           model: User,
-          attributes: ["username"],
+          attributes: ["user_name"],
         },
       ],
     });
@@ -64,6 +65,7 @@ router.get("/post/:id", async (req, res) => {
     console.log("post: ", post);
     res.render("selected-post", { post, logged_in: req.session.logged_in });
   } catch (err) {
+    console.error(err);
     res.status(500).json(err);
   }
 });

@@ -4,8 +4,8 @@
 
 
 {{#if posts.length}}
-<section>
-    <h2>Your Dashboard</h2>
+<section class="dashboard-container">
+    <h2 class="dashboard-title">Your Dashboard</h2>
     <ul class="post-list">
         {{#each posts as |post|}}
         <li>
@@ -16,5 +16,6 @@
     </ul>
 </section>
 {{/if}}
-
-<script src="/js/createPost.js"></script>
+{{#if logged_in}}
+    <script src="/js/createPost.js"></script>
+{{/if}}

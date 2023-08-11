@@ -6,6 +6,8 @@ const commentHandler = async (event) => {
         window.location.toString().split('/').length - 1
     ];
 
+    console.log(comment, post_id);
+
     if (comment) {
         const response = await fetch(`/api/comments`, {
             method: 'POST',
@@ -15,6 +17,8 @@ const commentHandler = async (event) => {
             },
         });
 
+        console.log(response);
+
         if (response.ok) {
             document.location.reload();
         } else {
@@ -23,4 +27,4 @@ const commentHandler = async (event) => {
     }
 };
  
-document.querySelector('#comment').addEventListener('submit', commentHandler);
+document.querySelector('#comment-form').addEventListener('submit', commentHandler);
