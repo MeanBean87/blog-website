@@ -89,7 +89,7 @@ router.post("/", async (req, res) => {
 });
 
 // PUT/update a post
-router.put("/:id", withAuth, async (req, res) => {
+router.put("/:id", async (req, res) => {
   try {
     const updatedPost = await Post.update(
       {
@@ -113,7 +113,7 @@ router.put("/:id", withAuth, async (req, res) => {
 });
 
 // DELETE a post
-router.delete("/:id", withAuth, async (req, res) => {
+router.delete("/:id", async (req, res) => {
   try {
     const deletedPost = await Post.destroy({
       where: {

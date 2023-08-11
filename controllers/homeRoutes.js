@@ -71,7 +71,7 @@ router.get("/post/:id", async (req, res) => {
 // Login route
 router.get("/login", (req, res) => {
   if (req.session.logged_in) {
-    console.log("logged in")
+    console.log("logged in");
     res.redirect("/");
     return;
   }
@@ -79,12 +79,16 @@ router.get("/login", (req, res) => {
 });
 
 // Signup route
-router.get('/signup', (req, res) => {
-    if (req.session.logged_in) {
-        res.redirect('/');
-        return;
-    }
-    res.render('signup');
+router.get("/signup", (req, res) => {
+  if (req.session.logged_in) {
+    res.redirect("/");
+    return;
+  }
+  res.render("signup");
+});
+
+router.get("/edit", (req, res) => {
+  res.render("edit-post");
 });
 
 // Wildcard route
