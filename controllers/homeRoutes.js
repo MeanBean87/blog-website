@@ -27,8 +27,12 @@ router.get("/", async (req, res) => {
 // GET one post
 router.get("/post/:id", async (req, res) => {
   try {
-    const postData = await Post.findByPk(req.params.id, {
-      attributes: ["id", "title", "content", "created_at"],
+    console.log("id", req.params.id);
+    const postData = await Post.findOne({
+      where: {
+        id: req.params.id,
+      },
+      attributes: ["id", "post_title", "post_content", "created_at"],
       include: [
         {
           model: Comment,
@@ -57,6 +61,7 @@ router.get("/post/:id", async (req, res) => {
     }
 
     const post = postData.get({ plain: true });
+    console.log("post: ", post);
     res.render("selected-post", { post, logged_in: req.session.logged_in });
   } catch (err) {
     res.status(500).json(err);
