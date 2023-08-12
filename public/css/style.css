@@ -19,6 +19,7 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  overflow-wrap: break-word;
 }
 
 body {
@@ -189,12 +190,14 @@ a:hover {
   font-size: 1.2rem;
   font-family: var(--electrolize);
   text-align: center;
+  overflow-wrap: break-word;
 }
 
 #post-content {
   font-size: 1.2rem;
   font-family: var(--electrolize);
   text-align: center;
+  overflow-wrap: break-word;
 }
 
 .post-item {
@@ -219,8 +222,12 @@ a:hover {
   background-color: var(--primary);
   text-align: center;
   padding: 1rem;
+  max-width: 80vw;
   border-radius: 10px;
   border: 2px solid var(--headerbg);
+  font-size: 1rem;
+  font-family: var(--electrolize);
+  text-overflow: ellipsis;
 }
 
 .post-content-container,
@@ -231,10 +238,17 @@ a:hover {
   align-items: center;
   background-color: var(--primary);
   text-align: center;
+  max-width: 80vw;
   margin-top: 1rem;
   padding: 1rem;
   border-radius: 10px;
   border: 2px solid var(--headerbg);
+  text-overflow: ellipsis;
+}
+
+.post-content-container {
+  text-overflow: ellipsis;
+  font-size: .8rem;
 }
 
 .created-info-container {
@@ -248,7 +262,7 @@ a:hover {
   padding: 1rem;
   border-radius: 10px;
   border: 2px solid var(--headerbg);
-  font-size: 0.7rem;
+  font-size: 0.6rem;
   font-style: italic;
 }
 
@@ -257,17 +271,19 @@ a:hover {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  max-width: 80vw;
 }
 
 .selected-post-title-container {
-  font-size: 1.5rem;
-  font-family: var(--electrolize);
-  text-align: center;
-  padding-top: 1rem;
+  max-width: 70vw;
+  text-overflow: ellipsis;
+  margin-bottom: 1rem;
 }
 
 .selected-post-content-container {
   font-size: 1.2rem;
+  max-width: 70vw;
+  text-overflow: ellipsis;
 }
 
 .selected-created-info-container {
@@ -310,17 +326,21 @@ a:hover {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: var(--primary);
+  background-color: var(--accent-one);
   width: 100%;
   padding: 1rem;
   font-family: var(--electrolize);
 }
 
 .comment-content {
+  display: flex;
+  flex-direction: column;
   padding-bottom: 1rem;
   text-align: center;
   font-size: 0.9rem;
   font-family: var(--electrolize);
+  overflow-wrap: break-word;
+  max-width: 60vw;
 }
 
 .comment-creator {
@@ -339,6 +359,7 @@ a:hover {
   padding: 1rem;
   font-family: var(--electrolize);
   border-radius: 10px;
+  max-width: 80vw;
   border: 2px solid var(--headerbg);
   margin: 1rem;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
@@ -381,7 +402,6 @@ a:hover {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: var(--accent-one);
   padding: 1rem;
   width: auto;
   font-family: var(--electrolize);
@@ -405,7 +425,7 @@ a:hover {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: var(--accent-one);
+  background-color: var(--primary);
   padding: 1rem;
   font-family: var(--electrolize);
   border-radius: 10px;
@@ -438,6 +458,7 @@ main {
   background-color: var(--primary);
   min-height: 100vh;
   width: 100%;
+  max-width: 100%;
   padding: 1rem;
 }
 

@@ -11,19 +11,17 @@
     </div>
   </div>
 {{> comments post.comments}}
-<div class="comment-input-container">
-    {{#if logged_in}}
-        <h3>Leave a Comment</h3>
-        <form id="comment-form">
-            <div class="comment-textarea">
-              <textarea id="comment_content"></textarea>
-            </div>
-            <div class="comment-submit-container">
-            </div>
-        </form>
-    {{/if}}
-</div>
+{{#if logged_in}}
+  <div class="comment-input-container">
+    <h3>Leave a Comment</h3>
+    <form id="comment-form">
+        <div class="comment-textarea">
+          <textarea id="comment_content" maxlength="255"></textarea>
+        </div>
+    </form>
+  </div>
     <button type="submit" id="comment" class="btn" form="comment-form">Comment</button>
+{{/if}}
     <button type="button" class="btn" id="return-home">Return Home</button>
 </article>
 

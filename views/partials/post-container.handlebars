@@ -1,13 +1,13 @@
 <article class="post-container">
   <div>
     <div class="post-title-container">
-      <a href="/post/{{id}}"><h2>{{post_title}}</h2></a>
+      <a href="/post/{{id}}" style="display: block; width: 100%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;"><h2>{{post_title}}</h2></a>
     </div>
     <div class="post-content-container">
-      <p>{{post_content}}</p>
+      <p style="display: block; width: 100%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;" >{{post_content}}</p>
     </div>
   </div>
   <div class="created-info-container">
-    <p>Created by {{user.user_name}} on {{format_date created_at}}</p>
+    <p style="display: block; width: 100%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">Created by {{user.user_name}} on {{format_date created_at}}</p>
   </div>
-</article>
+</article>`

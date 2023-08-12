@@ -15,10 +15,16 @@ Post.init(
     post_title: {
       type: DataTypes.STRING,
       allowNull: false,
+      validate: {
+        len: [1, 255],
+      },
     },
     post_content: {
       type: DataTypes.STRING,
       allowNull: false,
+      validate: {
+        len: [1, 255],
+      },
     },
     user_id: {
       type: DataTypes.INTEGER,

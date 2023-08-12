@@ -7,6 +7,7 @@
         type="text"
         name="title"
         id="post-title"
+        maxlength="255"
         value="{{post.post_title}}"
       />
     </div>
@@ -14,7 +15,7 @@
       <label for="post-content">Content</label>
       <textarea
         name="content"
-        id="post-content"
+        id="post-content" maxlength="255"
       >{{post.post_content}}</textarea>
     </div>
   </form>
