@@ -1,3 +1,4 @@
+//Purpose: logout.js is used to logout the user
 const logoutHandler = async (event) => {
   event.preventDefault();
 

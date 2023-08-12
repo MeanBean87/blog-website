@@ -1,14 +1,10 @@
 <div class="comments">
   {{#each this}}
-    <section class="comment-container">
-      <div>
-        {{comment_content}}
-      </div>
-      <div>
-        {{user.user_name}}
+    <ul class="comment-content-container">
+      <li class="comment-content">{{comment_content}}</li>
+      <li class="comment-creator">{{user.user_name}}
         commented on
-        {{format_date created_at}}
-      </div>
-    </section>
+        {{format_date created_at}}</li>
+    </ul>
   {{/each}}
 </div>

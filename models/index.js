@@ -1,3 +1,4 @@
+// Purpose: Used to specify the relationships between the models, in this case, User, Post, and Comment
 const User = require("./User");
 const Post = require("./Post");
 const Comment = require("./Comment");

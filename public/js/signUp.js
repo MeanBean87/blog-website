@@ -1,3 +1,4 @@
+// Purpose: signUp.js is used to sign up a new user
 const signupHandler = async (event) => {
   event.preventDefault();
 
@@ -32,4 +33,4 @@ const signupHandler = async (event) => {
   }
 };
 
-document.querySelector("#signup").addEventListener("click", signupHandler);
+document.querySelector("#signup").addEventListener("submit", signupHandler);

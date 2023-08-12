@@ -39,4 +39,3 @@ sequelize.sync({ force: false }).then(() => {
   app.listen(PORT, () => console.log("Now listening"));
 });
 
-//Create sessions object, contains encrypted secret timeout, needs to be passed to express-session. This will create a cookie for the session

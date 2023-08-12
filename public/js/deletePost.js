@@ -1,3 +1,4 @@
+// purpose: delete a post from the database
 const deletePostHandler = async (event) => {
   event.preventDefault();
   const id = window.location.toString().split("/")[

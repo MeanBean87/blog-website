@@ -1,23 +1,13 @@
 <section class="signup-page">
   <h2>Sign Up</h2>
-    <form class="signup-form">
-      <label for="username-signup">Select a Username</label>
-      <input
-        type="text"
-        class="entry-field"
-        id="username-signup"
-        autocomplete="username"
-      />
-      <label for="password-signup">Select a Password (minimum 8 characters.)</label>
-      <input
-        type="password"
-        class="entry-field"
-        id="password-signup"
-        autocomplete="current-password"
-      />
-      <button type="submit" class="btn" id="signup">Sign Up!</button>
-    </form>
-    <div id="error-message" style="color: red;"></div>
+  <form class="signup-form" id="signup">
+    <label for="username-signup">Select a Username</label>
+    <input type="text" class="entry-field" id="username-signup" />
+    <label for="password-signup">Select a Password (minimum 8 characters.)</label>
+    <input type="password" class="entry-field" id="password-signup" />
+  </form>
+  <div id="error-message" style="color: yellow;"></div>
+  <button type="submit" class="btn" form="signup">Sign Up!</button>
   <p>Already have an account? <a href="/login">Login</a></p>
 </section>
 

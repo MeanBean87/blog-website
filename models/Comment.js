@@ -1,3 +1,4 @@
+// Purpose: Sequelize model for Comment table in database
 const { Model, DataTypes } = require("sequelize");
 const sequelize = require("../config/connection");
 

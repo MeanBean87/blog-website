@@ -1,3 +1,4 @@
+// Purpose: login.js is used to handle the login form submission and post the login to the database
 const loginHandler = async (event) => {
   event.preventDefault();
 

@@ -1,3 +1,4 @@
+// Purpose: comment.js is used to handle the comment form submission and post the comment to the database
 const commentHandler = async (event) => {
   event.preventDefault();
 

@@ -87,6 +87,7 @@ router.get("/signup", (req, res) => {
   res.render("signup");
 });
 
+// Render the edit-post page
 router.get("/edit", (req, res) => {
   res.render("edit-post");
 });

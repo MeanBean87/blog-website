@@ -1,3 +1,4 @@
+//Purpose: Used to create the User model
 const { Model, DataTypes } = require("sequelize");
 const sequelize = require("../config/connection");
 const bcrypt = require("bcrypt");

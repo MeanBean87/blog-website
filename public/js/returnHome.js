@@ -1,3 +1,4 @@
+// Purpose: return to home page
 const returnHomeHander = () => {
     window.location.href = "/";
 };

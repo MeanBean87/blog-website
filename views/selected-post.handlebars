@@ -1,29 +1,30 @@
-<article class="post-container">
-  <div>
-    <div class="post-title-container">
+<article class="post-with-comments-article">
+  <div class="selected-post-container">
+    <div class="selected-post-title-container">
       <h2>{{post.post_title}}</h2>
     </div>
-    <div class="post-content-container">
+    <div class="selected-post-content-container">
       <p>{{post.post_content}}</p>
     </div>
-  </div>
-  <div class="created-info-container">
-    <p>Created by {{user.user_name}} on {{format_date post.created_at}}</p>
+    <div class="selected-created-info-container">
+      <p>Created by {{post.user.user_name}} on {{format_date post.created_at}}</p>
+    </div>
   </div>
 {{> comments post.comments}}
-<div>
+<div class="comment-input-container">
     {{#if logged_in}}
+        <h3>Leave a Comment</h3>
         <form id="comment-form">
-            <div>
-                <textarea id="comment_content"></textarea>
+            <div class="comment-textarea">
+              <textarea id="comment_content"></textarea>
             </div>
-            <div>
-                <button type="submit" id="comment" class="btn">Comment</button>
+            <div class="comment-submit-container">
             </div>
         </form>
     {{/if}}
-    <button type="button" class="btn" id="return-home">Return Home</button>
 </div>
+    <button type="submit" id="comment" class="btn" form="comment-form">Comment</button>
+    <button type="button" class="btn" id="return-home">Return Home</button>
 </article>
 
 

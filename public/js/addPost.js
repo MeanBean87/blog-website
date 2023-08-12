@@ -1,3 +1,4 @@
+// Purpose: addPost.js is used to add a new post to the database
 const newPostHandler = async (event) => {
   event.preventDefault();
 

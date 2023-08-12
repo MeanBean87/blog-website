@@ -1,7 +1,9 @@
+// Purpose: commentRoutes.js is used to create, read, update, and delete comments
 const router = require("express").Router();
 const { User, Post, Comment } = require("../../models");
 const { withAuth } = require("../../utils/auth");
 
+// GET all comments
 router.get("/", async (req, res) => {
   try {
     const commentData = await Comment.findAll({
@@ -13,6 +15,7 @@ router.get("/", async (req, res) => {
   }
 });
 
+// GET one comment
 router.get("/:id", async (req, res) => {
   try {
     const commentData = await Comment.findByPk(req.params.id, {
@@ -30,6 +33,7 @@ router.get("/:id", async (req, res) => {
   }
 });
 
+// POST a comment
 router.post("/", withAuth, async (req, res) => {
   try {
     console.log(req.body);
@@ -44,6 +48,7 @@ router.post("/", withAuth, async (req, res) => {
   }
 });
 
+// UPDATE a comment
 router.put("/:id", withAuth, async (req, res) => {
   try {
     const updatedComment = await Comment.update(
@@ -68,6 +73,7 @@ router.put("/:id", withAuth, async (req, res) => {
   }
 });
 
+// DELETE a comment
 router.delete("/:id", withAuth, async (req, res) => {
   try {
     const commentData = await Comment.destroy({

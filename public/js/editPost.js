@@ -1,3 +1,4 @@
+// Purpose: edit post
 const editPostHandler = async (event) => {
   event.preventDefault();
   const id = window.location.toString().split("/")[

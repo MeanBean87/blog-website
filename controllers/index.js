@@ -1,3 +1,4 @@
+//Purpose: index.js is used to collect the packaged group of API endpoints and prefix them with the path
 const router = require("express").Router();
 
 const apiRoutes = require("./api");
